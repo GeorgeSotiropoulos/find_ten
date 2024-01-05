@@ -1,0 +1,153 @@
+const Morph = ({ radius, style, revert, borderless, children }) => {
+  const topStyles = StyleSheet.flatten([
+    styles.morphTop,
+    revert && {
+      shadowColor: color(BACKGROUND).darken(0.3).alpha(0.5),
+    },
+    { borderRadius: radius || RADIUS },
+    style,
+  ]);
+
+  const bottomStyles = StyleSheet.flatten([
+    styles.morphBottom,
+    revert && {
+      shadowColor: color(BACKGROUND).lighten(0.5).alpha(0.5),
+    },
+    { borderRadius: radius || RADIUS },
+  ]);
+
+  const morphStyles = StyleSheet.flatten([
+    styles.morph,
+    borderless && { borderWidth: 0 },
+    { borderRadius: radius || RADIUS },
+  ]);
+
+  return (
+    <View style={topStyles}>
+      <View style={bottomStyles}>
+        <View style={morphStyles}>{children}</View>
+      </View>
+    </View>
+  );
+};
+
+
+  topShadow: {
+    shadowOffset: {
+      width: -6,
+      height: -6,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    shadowColor: "orange",
+  },
+  bottomShadow: {
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 6,
+    shadowColor: "gray",
+  },
+  inner: {
+    backgroundColor: "gray",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "black",
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "white",
+    borderRadius: 10,
+    borderWidth: 1,
+    backgroundColor: BACKGROUND,
+  },
+  neumorphism: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "white",
+  },
+  morph: {
+    borderRadius: RADIUS,
+    borderWidth: 1,
+    backgroundColor: BACKGROUND,
+    elevation: 1,
+    // borderColor: color(BACKGROUND).lighten(0.5).alpha(0.2),
+  },
+  morphTop: {
+    borderRadius: RADIUS,
+    // box-shadow is equivalent to shadow style in React Native
+    shadowOffset: {
+      width: -6,
+      height: -6,
+    },
+    elevation: 1,
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    shadowColor: "#9196d7", // this should be lighter shadow
+  },
+  morphBottom: {
+    borderRadius: RADIUS,
+    // box-shadow is equivalent to shadow style in React Native
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    elevation: 1,
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    shadowColor: "#c4caff",
+    // shadowColor: color(BACKGROUND).darken(0.3).alpha(0.5), // this should be darker shadow
+  },
+});
+
+{
+  /* <NeoMorph width={150} height={50} borderRadius={20}>
+          <View style={{ padding: 10 }}>
+            <TouchableOpacity
+              style={{
+                color: "#c9cffd",
+                height: 40,
+                width: 120,
+                borderRadius: 50,
+                alignItems: "center",
+                justifyContent: "center",
+                paddingBottom: 0,
+                backgroundColor: "#c9cffd",
+                borderRadius: 20,
+                borderColor: "#c9cffd",
+              }}
+              onPress={() => {
+                save_data(), navigation.navigate("ConfigureTeamsScreen");
+              }}
+            >
+              <Text style={{ color: "black" }}>Start Game</Text>
+            </TouchableOpacity>
+          </View>
+        </NeoMorph> */
+}
+import { LinearGradient } from 'expo-linear-gradient';
+<LinearGradient
+        colors={["red", "yellow", "green"]}
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 10,
+        }}
+      ></LinearGradient>
+      https://blog.logrocket.com/understanding-react-native-linear-gradient/
+
+
+
+      {/* <View style={{ padding: 10 }}>
+          <TouchableOpacity
+            style={sharedStyles.buttonStyle}
+            onPress={() => {
+              save_data(), navigation.navigate("ConfigureTeamsScreen");
+            }}
+          >
+            <Text style={sharedStyles.buttonText}>Start Game</Text>
+          </TouchableOpacity>
+        </View> */}

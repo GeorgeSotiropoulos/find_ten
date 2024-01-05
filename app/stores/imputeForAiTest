@@ -1,0 +1,52 @@
+Before substantive, stylistic, and copy editing:
+
+Suddenly Alex realized it was the wrong month. It might be the right day on the calendar but granddad was looking at the wrong month. He must have looking at July instead of June the silly bugger. There’d be no one there. No treats. Alex turned his head to shout to granddad when he realized he needed his hands to talk. The car coming the other way was full of a family on holiday and the kids in the back were excited about a day down on the beach. As usual they were laughing singing and fighting. Full of life. Their dad turned to say something and mother turned too. At the last minute both drivers turned back to look at the road ahead and they both swerved sharply to avoid impact. The few leaves were greasy on the wet slick road and the back wheels of the car skidded sideways and as Alex tried to turn and miss the car he too lost control. The impact pushed him across the road and the bike rode up on the pavement and into the solid slate wall. Both Alex and granddad pitched violently forwards over the wall and down onto the rocky slope below. Bouncing broken bodies hit a couple of rocks before both of them splashed into the raging stream. Last nights rains had swollen the flow in the steep-sided valley and the water quickly captured Alex and granddad. Back up on the road both car driver and front seat passenger were quiet while the kids in the back were screaming and went on screaming for a long time.
+
+After substantive, stylistic, and copy editing:
+The morning was damp and drizzly. As Alex motored the bike into the village, his granddad clinging to him from behind, he wished he were with Micaela instead of on this stupid outing. The town looked dead as usual, and he suddenly realized it was the wrong month. It might be the right day on the calendar, but his grandfather must have been looking at July instead of June, the silly bugger. There’d be no one there for the fair. No treats.
+
+Alex glanced over his shoulder to shout when he felt the automatic reflex of using his hands to communicate with the deaf old man. As he swivelled his head, his hands momentarily coming off the handlebars, Alex glimpsed the car coming from the other direction. It looked full of a family with kids in the back, excited as though they were about to experience a day down on the beach. They were laughing, singing, and fighting. Full of life. The father turned to say something, and the mother turned too.
+=====
+Before substantive, stylistic, and copy editing:
+It is crazy how fast the data engineering tools are evolving. And the field of data 
+engineering is changing too. You may spend time to learn a tool now, and after a few years it 
+can be possible that is not used anymore in hte field. However, some skills and lessons 
+are always relevant.
+
+After substantive, stylistic, and copy editing:
+It is incredible how fast data processing tools and technologies are evolving. 
+And with it, the nature of the data engineering discipline is changing as well.
+Tools I am using today are very different from what I used ten or even five years ago,
+ however, many lessons learned are still relevant today.
+
+=====
+Before substantive, stylistic, and copy editing:
+I started working as a data engineer way before it became popular. And I experienced the 
+difficulty of that change. 
+
+After substantive, stylistic, and copy editing:
+I have started to work in the data space long before data engineering became a thing 
+and data scientist became the sexiest job of the 21st century. I ‘officially’ became a 
+big data engineer six years ago, and I know firsthand the challenges developers with a 
+background in “traditional” data development have going through this journey.
+ Of course, this transition is not easy for software engineers either, it is just different.
+=====
+
+Before substantive, stylistic, and copy editing:
+If you have started using ML for your projects or simply for fun you might have realized how challenging the task of tuning your model can be and especially it is quite time-consuming. Especially if you are not an expert ML practitioner it is going to be challenging to make good educated guesses on which hyperparameters should be used to find the best performing model. Also, the algorithm that you are using might be quite sensitive to the hyperparameters selection, therefore it is always nice to test more implementations.
+
+After substantive, stylistic, and copy editing:
+If you have started using machine learning for your projects or simply for fun, 
+you might have realized how challenging the task of tuning your model can be,
+especially when you're not an expert in the field. You may have struggled with
+ hyperparameters tuning and you have questions that are rarely addressed because there 
+ are not many resources targeted at less experienced ML practitioners.
+As important as it is to test the different models, it is also important to create a 
+toolbox with the most popular and well-known machine learning algorithms. 
+These algorithms are sometimes associated with cheap online tools. In addition, 
+with a solid insight of which pahramids need to be considered this process can be 
+completed quite fast and lean.
+Without a proper knowledge of the hyperparameters of potentially the hundreds of 
+algorithm that are available, you are in a situation when you are guessing on what 
+can work better depending on hyperparameters with limited insights of the impact the 
+choices you are making have on the final performance of your model.

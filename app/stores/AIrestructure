@@ -1,0 +1,71 @@
+10 popular female actresses:
+Marilyn Monroe 2,
+Angelina Jolie 1,
+Halle Berry 2,
+Cameron Diaz 3,
+Jennifer Aniston 1,
+Kate Winslet 2,
+Emma Watson 3,
+Anne Hathaway 5,
+Drew Barrymore 4,
+Scarlett Johansson 2,
+Gives:
+
+question14: {
+    question: "10 popular female actresses",
+    category: "Movies",
+    difficulty: "Medium",
+    used: "no",
+    adultonly: "no",
+    toppoints: 26,
+    decade: "alltime",
+    data: [
+      {id: "1",title: "Marilyn Monroe",points: 2,},
+      {id: "2",title: "Angelina Jolie",points: 1,},
+      {id: "3",title: "Halle Berry",points: 2,},
+      {id: "4",title: "Cameron Diaz",points: 3,},
+      {id: "5",title: "Jennifer Aniston",points: 1,},
+      {id: "6",title: "Kate Winslet",points: 2,},
+      {id: "7",title: "Emma Watson",points: 3,},
+      {id: "8",title: "Anne Hathaway",points: 5,},
+      {id: "9",title: "Drew Barrymore",points: 4,},
+      {id: "10",title: "Scarlett Johansson",points: 2,},
+    ],
+  },
+==============
+10 popular songs ever:
+Imagine 1,
+Hey Jude 1,
+Happy Birthday 1,
+Yesterday 1,
+Don't Stop Believin' 1,
+Stairway to Heaven 2,
+I Will Always Love You 2,
+Eye of the Tiger 4,
+I Want It That Way 3,
+Livin' on a Prayer 3,
+
+gives: 
+
+  question15: {
+    question: "10 popular songs ever",
+    category: "Music",
+    difficulty: "Easy",
+    used: "no",
+    adultonly: "no",
+    toppoints: 27,
+    decade: "alltime",
+    data: [
+      { id: "1", title: "Imagine", points: 1 },
+      { id: "2", title: "Hey Jude", points: 1 },
+      { id: "3", title: "Happy Birthday", points: 1 },
+      { id: "4", title: "Yesterday", points: 1 },
+      { id: "5", title: "Don't Stop Believin'", points: 1 },
+      { id: "6", title: "Stairway to Heaven", points: 2 },
+      { id: "7", title: "I Will Always Love You", points: 2 },
+      { id: "8", title: "Eye of the Tiger", points: 4 },
+      { id: "9", title: "I Want It That Way", points: 3 },
+      { id: "10", title: "Livin' on a Prayer", points: 3 },
+    ],
+  },
+================

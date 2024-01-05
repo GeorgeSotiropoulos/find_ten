@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "find_and_say",
+    "slug": "find_ten",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/favicon.png",
+    "privacy": "unlisted",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*",
+      "./app/assets/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./app/assets/icon.png"
+    },
+    "android": {
+      "package": "com.george_sotiropoulos.find_and_say"
+    },
+    "description": ""
+  }
+}
