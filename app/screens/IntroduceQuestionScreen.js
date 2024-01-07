@@ -18,22 +18,34 @@ const filter_questionsData = (state, questionsUsed) => {
   return Object.keys(questionsData).reduce(function (filtered, key) {
     let difficulty_levels = ["Easy", "Medium", "Hard"];
 
-    if (state["difficulcy_easy_selected"] == "false") {
+    if (state["difficulty_easy_selected"] == "false") {
       difficulty_levels[0] = "false";
     }
-    if (state["difficulcy_medium_selected"] == "false") {
+    if (state["difficulty_medium_selected"] == "false") {
       difficulty_levels[1] = "false";
     }
-    if (state["difficulcy_hard_selected"] == "false") {
+    if (state["difficulty_hard_selected"] == "false") {
       difficulty_levels[2] = "false";
     }
+
+    // if no difficulty is selected then select everything. todo: maybe dont allow no selection of difficulty
+    if (
+      state["difficulty_easy_selected"] == "false" &&
+      state["difficulty_medium_selected"] == "false" &&
+      state["difficulty_hard_selected"] == "false"
+    ) {
+      difficulty_levels = ["Easy", "Medium", "Hard"];
+    }
+
     if (
       (questionsData[key]["difficulty"] == difficulty_levels[0] ||
         questionsData[key]["difficulty"] == difficulty_levels[1] ||
         questionsData[key]["difficulty"] == difficulty_levels[2]) &&
       !questionsUsed.includes(key)
-    )
+    ) {
       filtered[key] = questionsData[key];
+    }
+    // console.log(filtered);
     return filtered;
   }, {});
 };

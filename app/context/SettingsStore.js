@@ -7,9 +7,9 @@ export const initial_state = {
   rounds_selected: "10",
   secs_selected: "60",
   teams_selected: "4",
-  difficulcy_easy_selected: "true",
-  difficulcy_medium_selected: "true",
-  difficulcy_hard_selected: "true",
+  difficulty_easy_selected: "true",
+  difficulty_medium_selected: "true",
+  difficulty_hard_selected: "true",
   team_1: {
     name: "Team 1",
     color: "red",

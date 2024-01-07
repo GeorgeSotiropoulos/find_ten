@@ -165,44 +165,44 @@ export default function SettingsScreen({ navigation }) {
 
   // end
 
-  // create the Switch Selectors for difficulcy.
+  // create the Switch Selectors for difficulty.
 
-  const touchDifficulcyEasy = {
+  const touchDifficultyEasy = {
     // <-- "backgroundColor" will be always overwritten by "underlayColor"
     style:
-      state.difficulcy_easy_selected === "true"
+      state.difficulty_easy_selected === "true"
         ? {
             ...styles.touchOpacityStyleSelected,
           }
         : { ...styles.touchOpacityStyleNotSelected },
     onPress: () =>
-      state.difficulcy_easy_selected === "true"
-        ? setState({ ...state, difficulcy_easy_selected: "false" })
-        : setState({ ...state, difficulcy_easy_selected: "true" }),
+      state.difficulty_easy_selected === "true"
+        ? setState({ ...state, difficulty_easy_selected: "false" })
+        : setState({ ...state, difficulty_easy_selected: "true" }),
   };
 
-  const touchDifficulcyMedium = {
+  const touchDifficultyMedium = {
     // <-- "backgroundColor" will be always overwritten by "underlayColor"
     style:
-      state.difficulcy_medium_selected === "true"
+      state.difficulty_medium_selected === "true"
         ? { ...styles.touchOpacityStyleSelected }
         : { ...styles.touchOpacityStyleNotSelected },
     onPress: () =>
-      state.difficulcy_medium_selected === "true"
-        ? setState({ ...state, difficulcy_medium_selected: "false" })
-        : setState({ ...state, difficulcy_medium_selected: "true" }),
+      state.difficulty_medium_selected === "true"
+        ? setState({ ...state, difficulty_medium_selected: "false" })
+        : setState({ ...state, difficulty_medium_selected: "true" }),
   };
 
-  const touchDifficulcyHard = {
+  const touchDifficultyHard = {
     // <-- "backgroundColor" will be always overwritten by "underlayColor"
     style:
-      state.difficulcy_hard_selected === "true"
+      state.difficulty_hard_selected === "true"
         ? { ...styles.touchOpacityStyleSelected }
         : { ...styles.touchOpacityStyleNotSelected },
     onPress: () =>
-      state.difficulcy_hard_selected === "true"
-        ? setState({ ...state, difficulcy_hard_selected: "false" })
-        : setState({ ...state, difficulcy_hard_selected: "true" }),
+      state.difficulty_hard_selected === "true"
+        ? setState({ ...state, difficulty_hard_selected: "false" })
+        : setState({ ...state, difficulty_hard_selected: "true" }),
   };
   // END
 
@@ -347,14 +347,14 @@ export default function SettingsScreen({ navigation }) {
       <View className="switch-button" style={styles.sliderStyle}>
         <Text style={[sharedStyles.selectionText, { alignSelf: "center" }]}>Difficulty</Text>
         <View style={{ flexDirection: "row", height: 60, minWidth: 300 }}>
-          <TouchableOpacity {...touchDifficulcyEasy}>
-            <Text style={innerTextStyle("difficulcy_easy_selected", "true")}>Easy</Text>
+          <TouchableOpacity {...touchDifficultyEasy}>
+            <Text style={innerTextStyle("difficulty_easy_selected", "true")}>Easy</Text>
           </TouchableOpacity>
-          <TouchableOpacity {...touchDifficulcyMedium}>
-            <Text style={innerTextStyle("difficulcy_medium_selected", "true")}>Medium</Text>
+          <TouchableOpacity {...touchDifficultyMedium}>
+            <Text style={innerTextStyle("difficulty_medium_selected", "true")}>Medium</Text>
           </TouchableOpacity>
-          <TouchableOpacity {...touchDifficulcyHard}>
-            <Text style={innerTextStyle("difficulcy_hard_selected", "true")}>Hard</Text>
+          <TouchableOpacity {...touchDifficultyHard}>
+            <Text style={innerTextStyle("difficulty_hard_selected", "true")}>Hard</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -445,6 +445,13 @@ export const sharedStyles = StyleSheet.create({
     },
     textShadowRadius: 3,
     textShadowColor: "#A6A6DB",
+  },
+  textMenu: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

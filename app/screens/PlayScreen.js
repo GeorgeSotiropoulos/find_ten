@@ -7,10 +7,10 @@ import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import { NavigationEvents } from 'react-navigation';
+import ConfirmationPopUp from "../components/ConfirmationPopUp";
 import ContextMain from "../context/ContextMain";
 import { listItemPressedStore, questionsData, questionsUsed } from "../stores/dataStore";
 import { ButtonShades, sharedStyles } from "./SettingsScreen";
-
 const QUESTIONS_USED_KEY = "usedQuestions";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -102,7 +102,7 @@ const calculatePoints = (listItemPressed, data) => {
   let totalPoints = 0;
   for (let index = 0; index < 10; index++) {
     if (listItemPressed[index + 1] == true) {
-      totalPoints = totalPoints + data[index].points;
+      totalPoints += data[index].points;
     }
   }
   return totalPoints;
@@ -137,9 +137,33 @@ const read_data = async () => {
 
 export default function PlayScreen({ route, navigation }) {
   const { state, setState } = useContext(ContextMain);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  // Confirmation pop up relative components. start
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const modalMessage = [
+    <Text style={sharedStyles.textMenu} key="1">
+      Game ongoing.
+    </Text>,
+    <Text style={sharedStyles.textMenu} key="2">
+      Are you sure?
+    </Text>,
+    <Text key="3"> </Text>,
+  ];
+  // Confirmation pop up relative components. end
+
   const [listItemPressed, setlistItemPressed] = useState(listItemPressedStore);
   const questionKey = route.params["questionkey"];
+
   const question = questionsData[route.params["questionkey"]];
+  // console.log(question);
   const question_difficulty = question["difficulty"];
   const question_category = question["category"];
   //   console.log(question['difficulty']);
@@ -206,11 +230,11 @@ export default function PlayScreen({ route, navigation }) {
   };
 
   console.log("Run play screen");
-
+  // # todo: tech depth. use object or array for team properties. const person = { name: "Alice" };person.name = "Bob";
   const timer_secs = parseInt(state.secs_selected);
   const _teamSelected = state["play_order"];
   const playIndex = parseInt(state["play_index"] - 1);
-  var teamSelected = "team_1";
+  let teamSelected = "team_1";
   if (_teamSelected[playIndex] !== undefined && _teamSelected[playIndex] !== null) {
     teamSelected = _teamSelected[playIndex].split("_").slice(0, 2).join("_");
   } else {
@@ -334,15 +358,20 @@ export default function PlayScreen({ route, navigation }) {
           colors={ButtonShades} //"#F0F0FC"
           style={sharedStyles.buttonStyle}
         >
-          <TouchableOpacity
-            style={[{ backgroundColor: "transparent" }]}
-            onPress={() => {
-              navigation.navigate("HomeScreen");
-            }}
-          >
+          <TouchableOpacity style={[{ backgroundColor: "transparent" }]} onPress={openModal}>
             <Text style={sharedStyles.buttonText}>Go to Home</Text>
           </TouchableOpacity>
         </LinearGradient>
+        {/* Render ConfirmationPopUp only when modalVisible is true */}
+        {modalVisible && (
+          <ConfirmationPopUp
+            modalVisible={modalVisible}
+            popUpMessage={modalMessage}
+            onClose={closeModal}
+            navigation={navigation}
+            navigationToScreenName="HomeScreen"
+          />
+        )}
         <LinearGradient
           colors={ButtonShades} //"#F0F0FC"
           style={sharedStyles.buttonStyle}
@@ -404,11 +433,11 @@ const styles = StyleSheet.create({
 
 {
   /*
-  Todo: Ask twice if you want to go home or give up, some alert etc.
   todo: have a bank of messages, that can be randomly picked up on occasions.
       e.g. When you answered all the questions, select a random from "awesome feedback"
            When you answered almost non of the questions, select a randoms from the "mocking feedback"
   todo: add a question mark at the top right of the screen that says that explains what can you do. 
         Check how it works at focus app
+  todo: check why sounds does not play. 
 */
 }

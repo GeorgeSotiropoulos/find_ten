@@ -1,62 +1,77 @@
-import MaskedView from "@react-native-community/masked-view";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import ConfirmationPopUp from "../components/ConfirmationPopUp";
+const image = { uri: "https://reactjs.org/logo-og.png" };
 
 export default function DraftScreen({ navigation }) {
   console.log("App executed..");
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const modalMessage = [
+    <Text key="1" style={styles.text}>
+      Game ongoing.
+    </Text>,
+    <Text key="2" style={styles.text}>
+      Are you sure?
+    </Text>,
+    <Text key="3" style={styles.text}>
+      {" "}
+    </Text>,
+  ];
 
   return (
-    <View
-      style={{
-        alignContent: "center",
-        alignItems: "center",
-        borderRadius: 20,
-        height: 300,
-        overflow: "hidden",
-        padding: 20,
-        // backgroundColor: "yellow",
-      }}
-    >
-      {/* // Progress bar support */}
-      <View style={{ flex: 1, backgroundColor: "gray", alignSelf: "center" }} />
-      {/* // Progress bar, I play with "width" to indicate percentage */}
-      <View
-        style={[
-          StyleSheet.absoluteFill,
-          { width: "20%", backgroundColor: "green", alignSelf: "center" },
-        ]}
-      />
-      <MaskedView
-        style={[StyleSheet.absoluteFill, { justifyContent: "center" }]}
-        maskElement={
-          // I define text which will be masked
-          <View style={[StyleSheet.absoluteFill, { justifyContent: "center" }]}>
-            <Text style={{ marginHorizontal: 15, fontSize: 13 }} numberOfLines={1}>
-              Text color change
-            </Text>
-          </View>
-        }
-      >
-        {/* // I define a default mask that I apply to the text so that it is 'black' when it is not ON
-        the progress bar. */}
-        <View style={[StyleSheet.absoluteFill, { backgroundColor: "red" }]} />
-        {/* // I define the mask that takes the size of the progress bar and that I apply over the
-        default mask (to overwrite it) so that the text under the mask becomes white. */}
-        <View style={[StyleSheet.absoluteFill, { width: "18%", backgroundColor: "purple" }]} />
-      </MaskedView>
+    <View style={styles.container}>
+      <ImageBackground source={image} style={styles.image}>
+        <View style={styles.buttons_container}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("SettingsScreen");
+            }}
+          >
+            <Text style={styles.text}>Play</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("SettingsScreen");
+            }}
+          >
+            <Text style={styles.text}>Settings</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("HowToScreen")}>
+            <Text style={styles.text}> How to Play </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={openModal}>
+            <Text style={styles.text}>Back to Menu</Text>
+          </TouchableOpacity>
+          <ConfirmationPopUp
+            modalVisible={modalVisible}
+            popUpMessage={modalMessage}
+            onClose={closeModal}
+            navigation={navigation}
+            navigationToScreenName="HomeScreen"
+          />
+        </View>
+      </ImageBackground>
+      <View>
+        <Text>Something here</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  absoluteFill: {
+  container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "white",
-    borderColor: "#000",
-    borderWidth: 2,
-    borderRadius: 5,
-    flexDirection: "row",
+    // alignItems: 'center',
+    // justifyContent: 'flex-end',
   },
   image: {
     flex: 1,
