@@ -51,13 +51,13 @@ export default function ConfigureTeamsScreen({ navigation }) {
   console.log("ConfigureTeamsScreen run");
   const { state, setState } = useContext(ContextMain);
 
-  const redColorIcon = <Ionicons name="md-radio-button-on" size={30} color="red" />;
-  const blueColorIcon = <Ionicons name="md-radio-button-on" size={30} color="blue" />;
-  const yellowColorIcon = <Ionicons name="md-radio-button-on" size={30} color="yellow" />;
-  const greenColorIcon = <Ionicons name="md-radio-button-on" size={30} color="green" />;
-  const orangeColorIcon = <Ionicons name="md-radio-button-on" size={30} color="orange" />;
-  const purpleColorIcon = <Ionicons name="md-radio-button-on" size={30} color="purple" />;
-  const pinkColorIcon = <Ionicons name="md-radio-button-on" size={30} color="pink" />;
+  const redColorIcon = <Ionicons name="radio-button-on" size={30} color="red" />;
+  const blueColorIcon = <Ionicons name="radio-button-on" size={30} color="blue" />;
+  const yellowColorIcon = <Ionicons name="radio-button-on" size={30} color="yellow" />;
+  const greenColorIcon = <Ionicons name="radio-button-on" size={30} color="green" />;
+  const orangeColorIcon = <Ionicons name="radio-button-on" size={30} color="orange" />;
+  const purpleColorIcon = <Ionicons name="radio-button-on" size={30} color="purple" />;
+  const pinkColorIcon = <Ionicons name="radio-button-on" size={30} color="pink" />;
 
   const RowOfColorSelectButtons = ({ team_color }) => {
     // console.log(state);
