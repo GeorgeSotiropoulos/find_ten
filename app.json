@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "find_and_say",
-    "slug": "find_ten",
+    "slug": "find-10",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/favicon.png",
@@ -12,14 +12,13 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/cce90538-fa83-459d-9bbf-fc03c4c33595"
     },
-    "assetBundlePatterns": [
-      "**/*",
-      "./app/assets/*"
-    ],
+    "assetBundlePatterns": ["**/*", "./app/assets/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.find-10.game"
     },
     "web": {
       "favicon": "./app/assets/icon.png"
@@ -27,6 +26,15 @@
     "android": {
       "package": "com.george_sotiropoulos.find_and_say"
     },
-    "description": ""
+    "description": "",
+    "extra": {
+      "eas": {
+        "projectId": "cce90538-fa83-459d-9bbf-fc03c4c33595"
+      }
+    },
+    "owner": "george_sotiropoulos",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   }
 }

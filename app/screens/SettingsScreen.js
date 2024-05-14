@@ -305,7 +305,7 @@ export default function SettingsScreen({ navigation }) {
 
       {/* Number Of Rounds slider */}
       <View style={[styles.sliderStyle, { backgroundColor: "tranparent" }]}>
-        <Text style={sharedStyles.selectionText}>Select the time of each round (secs)</Text>
+        <Text style={sharedStyles.selectionText}>Select number of rounds </Text>
         <View
           style={{
             flexDirection: "row",
